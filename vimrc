@@ -1,3 +1,6 @@
+" Plugin management
+execute pathogen#infect()
+
 " Auto-reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -103,9 +106,6 @@ set noshowmode
 set nobackup
 set nowritebackup
 set noswapfile
-
-" Plugin management
-execute pathogen#infect()
 
 " Autocomplete (close preview automatically)
 " set omnifunc=syntaxcomplete#Complete
