@@ -1,8 +1,18 @@
 " Plugin management
 execute pathogen#infect()
 
+" Vim directories
+if has("win32")
+  let vimdir = $HOME.'\vimfiles'
+else
+  let vimdir = $HOME.'/.vim'
+endif
+
 " Auto-reload .vimrc
 autocmd! bufwritepost .vimrc source %
+
+" Backspace
+set backspace=2
 
 " Copy/paste
 set pastetoggle=<F2>
@@ -124,23 +134,27 @@ au BufNewFile,BufRead *.md set filetype=markdown
 
 " Use html snippets in PHP files
 au BufNewFile,BufRead *.php set ft=php.html
+
 " Use CakePHP snippets in ctp files
 au BufRead,BufNewFile *.ctp set ft=php.cakephp.html
 
 " Airline buffers
+" Status line
+set laststatus=2
+" Buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " UltiSnips
 let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsSnippetsDir=$HOME.'/.vim/bundle/vim-snippets/UltiSnips'
 let g:snips_author='Mishal El-Sanie <mishal.el-sanie@dupont.com>'
+let g:UltiSnipsSnippetsDir = vimdir.'/bundle/vim-snippets/UltiSnips'
 
 " PHPDoc (PDV)
 nnoremap <C-c> :call pdv#DocumentWithSnip()<CR>
+let g:pdv_template_dir = vimdir.'/bundle/pdv/templates_snip'
 
-" If on gVim Else on vim
-if has("gui_running") " gVim
-  let g:pdv_template_dir = 'c:/Users/lp4145/Dropbox/Mac/.vim/bundle/pdv/templates_snip'
+" If on Windows Else on OS X
+if has("win32") " gVim
   set guifont=Meslo\ LG\ S
 else " Vim
   let g:airline_powerline_fonts = 1 " Airline symbols
