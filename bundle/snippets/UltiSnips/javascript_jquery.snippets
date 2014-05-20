@@ -1,0 +1,34 @@
+priority -50
+
+snippet jquery "jQuery onLoad"
+$(function() {
+	${1}
+});
+endsnippet
+
+snippet $ "jQuery selector"
+$('${1}')${2}
+endsnippet
+
+snippet jevent "jQuery event"
+$('${1}').${2:click}(function(${3:e}) {
+	${4}
+});
+endsnippet
+
+snippet prevent "jQuery preventDefault"
+${1:e}.preventDefault();
+endsnippet
+
+snippet ajax "jQuery ajax"
+var queryData = '${4}';
+$.ajax({
+	url: '${1}',
+	type: '${2:POST}',
+	data: queryData,
+	dataType: '${3:json,html,...}',
+	success: function($3) {
+		${5}
+	}
+});
+endsnippet
