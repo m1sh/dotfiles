@@ -2,6 +2,15 @@ priority -50
 
 ## Snippets from SnipMate, taken from
 ## https://github.com/scrooloose/snipmate-snippets.git
+snippet cfile "Comment of file"
+/**
+ * ${1}
+ *
+ * created: `!v strftime('%d-%b-%Y')`
+ *
+ * @author `!v g:snips_author`
+ */
+endsnippet
 
 snippet array "array"
 $${1:arrayName} = array('${2}' => ${3});${4}
@@ -22,7 +31,7 @@ snippet doc_f "doc_f"
  * $2
  * @return ${4:void}
  * @author ${5:`!v g:snips_author`}
- **/
+ */
 ${1:public }function ${2:someFunc}(${3})
 {${6}
 }
@@ -33,7 +42,7 @@ snippet doc_i "doc_i"
  * $1
  * @package ${2:default}
  * @author ${3:`!v g:snips_author`}
- **/
+ */
 interface ${1:someClass}
 {${4}
 } // END interface $1"
@@ -96,7 +105,7 @@ var_export(${1});${2}
 endsnippet
 
 snippet getter "PHP Class Getter" b
-/*
+/**
  * Getter for $1
  */
 public function get${1/\w+\s*/\u$0/}()
@@ -107,7 +116,7 @@ $4
 endsnippet
 
 snippet setter "PHP Class Setter" b
-/*
+/**
  * Setter for $1
  */
 public function set${1/\w+\s*/\u$0/}($$1)
@@ -119,7 +128,7 @@ $0
 endsnippet
 
 snippet gs "PHP Class Getter Setter" b
-/*
+/**
  * Getter for $1
  */
 public function get${1/\w+\s*/\u$0/}()
@@ -127,7 +136,7 @@ public function get${1/\w+\s*/\u$0/}()
 	return $this->$1;$2
 }
 
-/*
+/**
  * Setter for $1
  */
 public function set${1/\w+\s*/\u$0/}($$1)
