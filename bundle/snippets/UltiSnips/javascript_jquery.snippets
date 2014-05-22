@@ -23,8 +23,8 @@ endsnippet
 snippet ajax "jQuery ajax"
 var queryData = '${4}';
 $.ajax({
-	url: '${1}',
 	type: '${2:POST}',
+	url: '${1}',
 	data: queryData,
 	dataType: '${3:json,html,...}',
 	success: function($3) {

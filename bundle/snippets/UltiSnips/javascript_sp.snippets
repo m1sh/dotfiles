@@ -2,6 +2,7 @@ priority -50
 
 snippet spfunc "SP Function"
 ExecuteOrDelayUntilScriptLoaded(${1:Function}, "sp.js");
+
 function $1() {
 	var clientContext = new SP.ClientContext();
 	this.${2:var} = clientContext.get_web();
