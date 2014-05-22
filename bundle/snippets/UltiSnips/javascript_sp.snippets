@@ -1,0 +1,22 @@
+priority -50
+
+snippet spfunc "SP Function"
+ExecuteOrDelayUntilScriptLoaded(${1:Function}, "sp.js");
+function $1() {
+	var clientContext = new SP.ClientContext();
+	this.${2:var} = clientContext.get_web();
+	clientContext.load(this.$2);
+	clientContext.executeQueryAsync(
+		Function.createDelegate(this, this.onQuerySucceeded),
+		Function.createDelegate(this, this.onQueryFailed)
+	);
+}
+
+function onQuerySucceeded(sender, args) {
+	alert('Title: ' + this.$2.get_title() + '\n Server Relative URL: ' + this.$2.get_serverRelativeUrl());
+}
+
+function onQueryFailed(sender, args) {
+    alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+}
+endsnippet

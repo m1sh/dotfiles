@@ -32,3 +32,34 @@ $.ajax({
 	}
 });
 endsnippet
+
+snippet validation "jQuery validation"
+var validation = $(this).validate({
+	errorPlacement: function(error, element) {
+		error.css('display', 'block').appendTo(element.parent());
+		error.addClass('text-danger');
+	},
+	highlight: function(element) {
+		$(element).parents('.form-group').addClass('has-error');
+	},
+	unhighlight: function(element) {
+		$(element).parents('.form-group').removeClass('has-error');
+	}
+});
+endsnippet
+
+snippet ajaxsubmit "jQuery ajaxSubmit"
+$(this).ajaxSubmit({
+	resetForm: false,
+	beforeSubmit: function() { return validation.form(); },
+	url: '${1}',
+	dataType: 'json',
+	success: function(json) {
+		if (json.type == 'Error') {
+			$('.flash').html(json.message);
+		} else {
+			window.location = '${2}';
+		}
+	}
+});
+endsnippet

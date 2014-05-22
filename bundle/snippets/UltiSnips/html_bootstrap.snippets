@@ -1,0 +1,22 @@
+priority -50
+
+snippet bhform "Bootstrap Horizontal Form"
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="${2:inputName}">${1}</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="$2" name="$2">
+		</div>
+	</div>
+	<input type="submit" class="btn btn-sm btn-primary" value="${3:Save}">
+</form>
+endsnippet
+
+snippet bhfg "Bootstrap Horizontal form-group"
+<div class="form-group">
+	<label class="col-sm-2 control-label" for="${2:inputName}">${1}</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control${3}" id="$2" name="$2">
+	</div>
+</div>
+endsnippet
