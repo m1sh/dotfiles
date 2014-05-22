@@ -1,15 +1,25 @@
 Installation
 ------------
 
+### OS X
 ```
-git clone git://github.com/m1sh/dotfiles.git
+git clone --recursive https://github.com/m1sh/dotfiles.git ~/.vim/
+```
+### Windows
+```
+git clone --recursive https://github.com/m1sh/dotfiles.git vimfiles/
 ```
 
 Symlinks
 --------
 
+### OS X
 ```
 ln -s ~/.vim/vimrc ~/.vimrc
+```
+### Windows
+```
+mklink .vimrc vimfiles\vimrc
 ```
 
 
@@ -24,5 +34,5 @@ Updating bundles
 ----------------
 
 ```
-git submodule update
+git submodule update --recursive
 ```
