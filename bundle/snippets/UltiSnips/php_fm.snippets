@@ -1,11 +1,20 @@
 priority -50
 
 snippet find "FM newFindCommand"
-$${1:find} = $db->newFindCommand('${2}');
-$$1->addFindCriterion('${3}', ${4});
+$${1:find} = $db->newFindCommand('$2');
+$$1->addFindCriterion('$3', $4);
 $res = $$1->execute();
-if(${5}FileMaker::isError($res)) {
-	get${6}
+if($5FileMaker::isError($res)) {
+	get$6
+}
+endsnippet
+
+snippet add "FM newAddCommand"
+$${1:add} = $db->newAddCommand('$2');
+$$1->setField('$3', $4));
+$${5:commit} = $add->execute();
+if($6FileMaker::isError($$5)) {
+	$7
 }
 endsnippet
 
@@ -18,11 +27,11 @@ $${1:res} = $$1->getRecords();
 endsnippet
 
 snippet addcrit "FM addFindCriterion"
-$${1:find}->addFindCriterion('${2}', ${3});
+$${1:find}->addFindCriterion('$2', $3);
 endsnippet
 
 snippet addsort "FM addSortRule"
-$${1:find}->addSortRule('${2}', ${3:1}, ${4:fmsa, fmsd});
+$${1:find}->addSortRule('$2', ${3:1}, ${4:fmsa, fmsd});
 endsnippet
 
 snippet fmsa "FM Sort Ascend"
@@ -34,27 +43,27 @@ FILEMAKER_SORT_DESCEND
 endsnippet
 
 snippet getfield "FM getField"
-$${1:res}->getField('${2}');
+$${1:res}->getField('$2');
 endsnippet
 
 snippet setfield "FM setField"
-$${1:res}->setField('${2}', ${3});
+$${1:res}->setField('$2', $3);
 endsnippet
 
 snippet fmerror "FM isError"
-if(${1}FileMaker::isError($${2:res})) {
-	${3}
+if($1FileMaker::isError($${2:res})) {
+	$3
 }
 endsnippet
 
 snippet getmsg "FM Error getMessage"
-$${1:res}->getMessage()${2}
+$${1:res}->getMessage()$2
 endsnippet
 
 snippet fmscript "FM newPerformScriptCommand"
 $${1:script} = $db->newPerformScriptCommand('${2:Layout}', '${3:Script name}', ${4:'${5:Params}'});
 $exe = @$$1->execute();
-if(${6}FileMaker::isError($exe)) {
-	${7}
+if($6FileMaker::isError($exe)) {
+	$7
 }
 endsnippet

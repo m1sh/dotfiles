@@ -77,7 +77,7 @@ if (${1:/* condition */}) {
 endsnippet
 
 snippet inc "inc"
-include '${1:file}';${2}
+include('${1:file}');${2}
 endsnippet
 
 snippet log "log"
@@ -215,6 +215,20 @@ $$1 = new $1($2);
 $0
 endsnippet
 
+snippet sif "html one liner if"
+<?php if($1): ?>
+	$2
+<?php endif; ?>
+endsnippet
+
+snippet sife "html one liner if else"
+<?php if($1): ?>
+	$2
+<?php else: ?>
+	$3
+<?php endif; ?>
+endsnippet
+
 snippet ife "if else"
 if (${1:/* condition */}) {
 	${2:// code...}
@@ -268,6 +282,10 @@ public function $1Action($2)
 	$3
 	return ${4:array();}$0
 }
+endsnippet
+
+snippet php "PHP tag"
+<?php $1 ?>
 endsnippet
 
 # :vim:ft=snippets:
