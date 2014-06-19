@@ -40,3 +40,6 @@
 [submodule "bundle/vmustache"]
 	path = bundle/vmustache
 	url = https://github.com/tobyS/vmustache.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/vim-scripts/Auto-Pairs.git
