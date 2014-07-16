@@ -135,6 +135,9 @@ au BufNewFile,BufRead *.md set filetype=markdown
 " Use html snippets in PHP files
 au BufNewFile,BufRead *.php set ft=php.html
 
+" Use blade syntax
+au BufNewFile,BufRead *.blade.php set ft=blade
+
 " Use CakePHP snippets in ctp files
 au BufRead,BufNewFile *.ctp set ft=php.cakephp.html
 
