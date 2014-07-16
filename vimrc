@@ -7,6 +7,7 @@ if has("win32")
 else
   let vimdir = $HOME.'/.vim'
 endif
+set autochdir
 
 " Auto-reload .vimrc
 autocmd! bufwritepost .vimrc source %
