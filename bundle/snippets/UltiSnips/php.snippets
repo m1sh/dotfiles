@@ -214,7 +214,13 @@ function ${1:name}(${2:$param}) {
 $0
 endsnippet
 
-snippet fore "Foreach loop"
+snippet sforeach "HTML foreach"
+<?php foreach($${1:var} as $${2:value}): ?>
+
+<?php endforeach; ?>
+endsnippet
+
+snippet foreach "Foreach loop"
 foreach ($${1:variable} as $${3:value}){
 	${VISUAL}${4}
 }

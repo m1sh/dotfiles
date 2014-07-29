@@ -36,3 +36,9 @@ Updating bundles
 ```
 git submodule update --recursive
 ```
+
+Requirements
+------------
+
+* Python: for UltiSnips
+* Lua: for NeoComplete
