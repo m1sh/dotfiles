@@ -42,6 +42,7 @@ noremap <Leader>Q :qa!<CR> " All windows
 set hidden
 map <Leader>m :bn<CR>
 map <Leader>n :bp<CR>
+map <Leader>c :bd<CR>
 
 " NeoComplete toggle
 noremap <Leader>a :NeoCompleteToggle<CR>
