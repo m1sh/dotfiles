@@ -169,7 +169,7 @@ let g:pdv_template_dir = vimdir.'/bundle/pdv/templates_snip'
 
 " If on Windows Else on OS X
 if has("win32") " gVim
-  set guifont=Meslo\ LG\ S
+  set guifont=Monaco
   " Defautl window size
   set lines=30
   set columns=150
