@@ -15,6 +15,10 @@ autocmd! bufwritepost .vimrc source %
 " Backspace
 set backspace=2
 
+" Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+
 " Copy/paste
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -38,6 +42,7 @@ noremap <Leader>Q :qa!<CR> " All windows
 set hidden
 map <Leader>m :bn<CR>
 map <Leader>n :bp<CR>
+map <Leader>c :bd<CR>
 
 " NeoComplete toggle
 noremap <Leader>a :NeoCompleteToggle<CR>
