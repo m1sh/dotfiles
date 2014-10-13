@@ -14,7 +14,7 @@ snippet print "print_r"
 print_r($1);
 endsnippet
 
-snippet cfile "Comment of file"
+snippet doc_file "Comment of file"
 /**
  * ${1}
  *
@@ -44,8 +44,8 @@ snippet doc_f "doc_f"
  * @return ${4:void}
  * @author ${5:`!v g:snips_author`}
  */
-${1:public }function ${2:someFunc}(${3})
-{${6}
+${1:public }function ${2:someFunc}(${3}) {
+	${6}
 }
 endsnippet
 
