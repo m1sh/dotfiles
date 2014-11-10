@@ -175,5 +175,6 @@ if has("win32") " gVim
   set lines=30
   set columns=150
 else " Vim
+  set ttimeoutlen=250 " Lag in terminal vim
   let g:airline_powerline_fonts = 1 " Airline symbols
 endif
