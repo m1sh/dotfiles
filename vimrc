@@ -106,7 +106,7 @@ set number
 set nowrap " No auto-wrap on load
 set fo-=t " No auto-wrap when typing
 set showbreak=↪ " Line wraps when wrapped
-set cursorline " Highlight current line
+set cursorline " Highlight current line + line number
 
 " Tabs to spaces
 set tabstop=2
