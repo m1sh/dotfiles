@@ -139,7 +139,8 @@ let g:used_javascript_libs = 'jquery'
 autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
 
 " CtrlP default command
-let g:ctrlp_cmd = 'CtrlPMixed'
+" let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " Load highlights for special file extentions
 au BufNewFile,BufRead *.md set filetype=markdown
