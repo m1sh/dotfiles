@@ -133,6 +133,8 @@ set noswapfile
 " set omnifunc=syntaxcomplete#Complete
 " autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" Minitest completion
+set completefunc=syntaxcomplete#Complete
 
 " jQuery autocomplete
 let g:used_javascript_libs = 'jquery'
@@ -147,9 +149,9 @@ au BufNewFile,BufRead *.md set filetype=markdown
 
 " Use html snippets in PHP files
 au BufNewFile,BufRead *.php set ft=php.html
-
-" Use blade syntax
-au BufNewFile,BufRead *.blade.php set ft=blade
+"
+" Use blade snippets in PHP files
+au BufNewFile,BufRead *.blade.php set ft=blade.html
 
 " Use CakePHP snippets in ctp files
 au BufRead,BufNewFile *.ctp set ft=php.cakephp.html
