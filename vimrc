@@ -167,6 +167,10 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:snips_author='Mishal El-Sanie <mishal.el-sanie@dupont.com>'
 let g:UltiSnipsSnippetsDir = vimdir.'/bundle/snippets/UltiSnips'
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
 " PHPDoc (PDV)
 nnoremap <C-c> :call pdv#DocumentWithSnip()<CR>
 let g:pdv_template_dir = vimdir.'/bundle/pdv/templates_snip'
