@@ -165,7 +165,7 @@ let g:airline#extensions#tabline#enabled = 1
 " UltiSnips
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:snips_author='Mishal El-Sanie <mishal.el-sanie@dupont.com>'
-" let g:UltiSnipsSnippetsDir = vimdir.'/bundle/vim-snippets/UltiSnips'
+let g:UltiSnipsSnippetsDir = vimdir.'/bundle/snippets/UltiSnips'
 
 " PHPDoc (PDV)
 nnoremap <C-c> :call pdv#DocumentWithSnip()<CR>
