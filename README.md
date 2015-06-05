@@ -34,11 +34,8 @@ Updating bundles
 ----------------
 
 ```
-git submodule update --recursive
-```
-or
-```
 git submodule foreach git pull origin master
+git submodule update
 ```
 
 Requirements
