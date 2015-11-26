@@ -70,7 +70,3 @@
 	ignore = dirty
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "bundle/vim-indent-guides"]
-	ignore = dirty
-	path = bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
