@@ -4,7 +4,7 @@ snippet spfunc "SP Function"
 ExecuteOrDelayUntilScriptLoaded(${1:Function}, "sp.js");
 
 function $1() {
-	var clientContext = new SP.ClientContext();
+	var clientContext = new SP.ClientContext.get_current();
 	this.${2:var} = clientContext.get_web();
 	clientContext.load(this.$2);
 	clientContext.executeQueryAsync(
@@ -20,4 +20,48 @@ function onQuerySucceeded(sender, args) {
 function onQueryFailed(sender, args) {
     alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
 }
+endsnippet
+
+snippet spquery "SP List Query"
+ExecuteOrDelayUntilScriptLoaded(${1:queryList}, "sp.js");
+
+function $1() {
+	var clientContext = new SP.ClientContext.get_current();
+	var oList = clientContext.get_web().get_lists().getByTitle('${2}');
+	var camlQuery = new SP.CamlQuery();
+	var query = '<View><RowLimit>100</RowLimit></View>';
+	camlQuery.set_viewXml(query);
+	this.collListItem = oList.getItems(camlQuery);
+
+	clientContext.load(collListItem, 'Include(ID, Title)');
+	clientContext.executeQueryAsync(
+		Function.createDelegate(this, this.onQuerySucceeded),
+		Function.createDelegate(this, this.onQueryFailed)
+	);
+}
+
+function onQuerySucceeded(sender, args) {
+	var count = collListItem.get_count();
+	var listItemEnumerator = collListItem.getEnumerator();
+	while (listItemEnumerator.moveNext()) {
+		var oListItem = listItemEnumerator.get_current();
+		var title = oListItem.get_item('Title');
+	}
+}
+
+function onQueryFailed(sender, args) {
+	alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+}
+endsnippet
+
+snippet spcond "SP CAML Query Condition"
+  var camlQuery = new SP.CamlQuery();
+  var query = '<View><Query><Where><And>';
+  query += '<Eq><FieldRef Name="Will_x0020_you_x0020_be_x0020_pa"></FieldRef>';
+  query += '<Value Type="Text">Yes</Value></Eq>';
+  query += '<Eq><FieldRef Name="Completed"></FieldRef>';
+  query += '<Value Type="Number">1</Value></Eq>';
+  query += '</And></Where></Query></View>';
+  camlQuery.set_viewXml(query);
+  this.collListItem = oList.getItems(camlQuery);
 endsnippet
