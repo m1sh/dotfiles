@@ -70,3 +70,7 @@
 	ignore = dirty
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/indentLine"]
+	ignore = dirty
+	path = bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
