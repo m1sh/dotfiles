@@ -62,7 +62,7 @@
 	ignore = dirty
 	path = bundle/matchit
 	url = https://github.com/tmhedberg/matchit.git
-[submodule "bundle\\tabular"]
+[submodule "bundle/tabular"]
 	ignore = dirty
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
