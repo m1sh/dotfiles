@@ -65,3 +65,19 @@ snippet spcond "SP CAML Query Condition"
   camlQuery.set_viewXml(query);
   this.collListItem = oList.getItems(camlQuery);
 endsnippet
+
+snippet spjquery "SP 365 Wait for jQuery"
+function waitForJquery() {
+  if(typeof($) == 'undefined') {
+    setTimeout(waitForJquery, 1000);
+  } else if(typeof($().SPServices) == 'undefined') {
+    setTimeout(waitForJquery, 1000);
+  } else {
+    runCode();
+  }
+}
+function runCode() {
+	${1:// jQuery Code}
+}
+waitForJquery();
+endsnippet

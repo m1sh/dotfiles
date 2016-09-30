@@ -165,9 +165,7 @@ snippet img "XHTML <img>" w
 endsnippet
 
 snippet body "XHTML <body>"
-<body id="${1:`!p
-snip.rv = snip.fn and 'Hallo' or 'Nothin'
-`}"${2: onload="$3"}>
+<body>
 	$0
 </body>
 endsnippet
@@ -194,7 +192,9 @@ endsnippet
 
 snippet head "XHTML <head>"
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
 	$0
 </head>
