@@ -48,9 +48,8 @@ map <Leader>c :bd<CR>
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-" Disable win alt key
-" set guioptions-=m
-" set guioptions-=M
+" Remove gVim toolbar
+set guioptions-=T
 
 " Navigate windows
 " map <C-j> <C-w>j
