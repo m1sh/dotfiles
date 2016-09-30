@@ -58,10 +58,6 @@
 	ignore = dirty
 	path = bundle/auto-pairs
 	url = https://github.com/vim-scripts/Auto-Pairs.git
-[submodule "bundle/neocomplete"]
-	ignore = dirty
-	path = bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "bundle/matchit"]
 	ignore = dirty
 	path = bundle/matchit

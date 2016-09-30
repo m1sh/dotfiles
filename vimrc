@@ -44,11 +44,6 @@ map <Leader>m :bn<CR>
 map <Leader>n :bp<CR>
 map <Leader>c :bd<CR>
 
-" NeoComplete toggle
-noremap <Leader>a :NeoCompleteToggle<CR>
-inoremap <Leader>a <C-C>:NeoCompleteToggle<CR>
-vnoremap <Leader>a <C-O>:NeoCompleteToggle<CR>
-
 " Save/Load folds on enter/quit
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
