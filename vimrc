@@ -43,6 +43,7 @@ set hidden
 map <Leader>m :bn<CR>
 map <Leader>n :bp<CR>
 map <Leader>c :bd<CR>
+map <Leader>t :NERDTreeToggle<CR>
 
 " Save/Load folds on enter/quit
 autocmd BufWinLeave *.* mkview
