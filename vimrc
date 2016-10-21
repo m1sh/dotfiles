@@ -2,8 +2,9 @@
 execute pathogen#infect()
 
 " Vim directories
-if has("win32")
+if has("win32") || has("win64")
   let vimdir = $HOME.'\vimfiles'
+  execute "set viewdir=".vimdir."\view"
 else
   let vimdir = $HOME.'/.vim'
 endif
