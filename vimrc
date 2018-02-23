@@ -171,7 +171,7 @@ let g:syntastic_auto_loc_list = 1
 
 " PHPDoc (PDV)
 nnoremap <C-c> :call pdv#DocumentWithSnip()<CR>
-let g:pdv_template_dir = vimdir.'/bundle/pdv/templates_snip'
+let g:pdv_template_dir = $VIM.'/vimfiles/bundle/pdv/templates_snip'
 
 " If on Windows Else on OS X
 if has("win32") " gVim
