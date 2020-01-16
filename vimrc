@@ -125,6 +125,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Diff options
+set diffopt+=vertical
+
 " Autocomplete (close preview automatically)
 " set omnifunc=syntaxcomplete#Complete
 " autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -157,6 +160,7 @@ au BufRead,BufNewFile *.ctp set ft=php.cakephp.html
 " Airline buffers
 " Status line
 set laststatus=2
+" let g:airline_powerline_fonts = 1
 " Buffers
 let g:airline#extensions#tabline#enabled = 1
 
